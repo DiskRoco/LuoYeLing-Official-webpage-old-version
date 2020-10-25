@@ -1,0 +1,25 @@
+<script src="https://mcapi.us/scripts/minecraft.js"></script>
+<meta name=”viewport” content=”width=device-width”>
+<style type="text/css" media="screen">
+
+</style>
+
+<div class="statusbox">
+<span class="label"> </span>
+<div class="server-status">
+   Status: <span class="server-online"></span>
+</div>
+<script>
+ MinecraftAPI.getServerStatus('ht.6my.xyz', {
+    port: 25565
+  }, function (err, status) {
+    if (err) {
+  return document.querySelector('.server-status').innerHTML = 'Status: Error / Offline';
+    }
+
+// you can change these to your own message!
+    document.querySelector('.server-online').innerHTML = status.online ?     'Online' : 'Offline';
+  });
+</script>
+
+</div>
